@@ -1,1 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Demon Slayer Fan Page</title>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:black;color:white;text-align:center;font-family:Arial}
+nav{position:fixed;top:0;right:0;z-index:1000;padding:15px}
+.menu-btn{background:#111;color:white;padding:10px 15px;cursor:pointer;border:none;font-size:1.2rem;font-weight:bold}
+.menu-btn:hover{background:red}
+.menu-content{display:none;position:absolute;right:15px;top:50px;background:#111;min-width:150px;border:2px solid red;border-radius:5px}
+.menu-content a{display:block;color:white;padding:10px;text-decoration:none}
+.menu-content a:hover{background:red}
+.hero{height:100vh;background:url("anime1.jpg") no-repeat center/cover;display:flex;justify-content:center;align-items:center;position:relative}
+.title{font-family:'Cinzel Decorative',cursive;font-size:5rem;text-transform:uppercase;color:#8B0000;text-shadow:0 0 10px #8B0000,0 0 20px #660000;letter-spacing:15px;text-decoration:underline;white-space:nowrap;position:absolute;top:45%;left:50%;transform:translate(-50%,-50%)}
+section{padding:60px 20px;margin:0}
+section:not(.hero){border-left:6px double red;border-right:6px double red;border-bottom:6px double red}
+.sep{border-top:6px double red;margin:0}
+h2{font-family:'Cinzel Decorative',cursive;font-size:3rem;color:#8B0000;text-decoration:underline;text-shadow:0 0 15px #660000;margin-bottom:30px}
+.gallery{background:#111;}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:20px}
+.grid img{width:100%;height:400px;object-fit:cover;border:3px solid red;border-radius:10px;cursor:pointer}
+.grid img:hover{transform:scale(1.08);border-color:orange;box-shadow:0 0 25px red}
+.about{background:#000;color:#ddd;text-align:left;max-width:900px;margin:auto;line-height:1.8;font-size:1.2rem}
+.about h2{text-align:center}
+.character-row{display:flex;align-items:center;justify-content:center;gap:30px;margin-bottom:60px;flex-wrap:wrap}
+.character-row img{width:280px;height:380px;object-fit:cover;border:3px solid red;border-radius:12px;box-shadow:0 0 20px red;cursor:pointer}
+.character-row img:hover{transform:scale(1.08);box-shadow:0 0 40px orange}
+.char-text{max-width:500px;text-align:left}
+.char-text h3{font-size:2rem;color:#8B0000;text-decoration:underline;font-weight:bold;text-shadow:0 0 12px #660000;margin-bottom:15px;font-family:'Cinzel Decorative',cursive}
+.char-text p{font-size:1.2rem;color:#f1f1f1;line-height:1.8}
+.hashira{background:#111}
+.hashira-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px}
+.hashira-card{background:#000;border:2px solid red;border-radius:10px;padding:15px;box-shadow:0 0 15px red;cursor:pointer}
+.hashira-card:hover{transform:scale(1.05);border-color:orange;box-shadow:0 0 30px orange}
+.hashira-card img{width:100%;height:300px;object-fit:cover;border-radius:8px;margin-bottom:10px}
+.hashira-card h3{font-family:'Cinzel Decorative',cursive;font-size:1.5rem;font-weight:bold;text-decoration:underline;color:#8B0000;text-shadow:0 0 12px #660000;margin:8px 0}
+.where{background:#000;color:#ddd;text-align:center;line-height:1.8;font-size:1.2rem}
+.where h2{text-align:center}
+.watch-list{max-width:800px;margin:30px auto 0;display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:15px;padding:0}
+.watch-item{display:flex;justify-content:space-between;align-items:center;padding:12px 16px;background:#111;border:2px solid red;border-radius:10px;box-shadow:0 0 12px red}
+.watch-item .site{font-size:1.1rem;text-align:left}
+.watch-item .rating{background:transparent;color:orange;font-weight:bold;padding:6px 12px;border-radius:8px;border:2px solid rgba(255,165,0,0.2);text-shadow:0 0 10px orange,0 0 20px red;box-shadow:0 0 14px rgba(255,140,0,0.12);font-size:1.2rem}
+.watch-item .rating:hover{text-shadow:0 0 18px orange,0 0 30px red;transform:translateY(-2px)}
+#popup{display:none;position:fixed;z-index:999;left:0;top:0;width:100%;height:100%;background:rgba(0,0,0,0.9);justify-content:center;align-items:center}
+#popup img{max-width:90%;max-height:80%;border:4px solid red;border-radius:10px;box-shadow:0 0 30px red}
+#popup span{position:absolute;top:20px;left:40px;font-size:3rem;color:white;cursor:pointer;font-weight:bold}
+</style>
+</head>
+<body>
 
+<nav>
+<button class="menu-btn" onclick="toggleMenu()">☰ Menu</button>
+<div id="menu" class="menu-content">
+<a href="#about">About</a>
+<a href="#gallery">Gallery</a>
+<a href="#slayers">Slayers</a>
+<a href="#hashira">Hashira</a>
+</div>
+</nav>
+
+<section class="hero"><div class="title">DEMON SLAYER</div></section>
+
+<div class="sep"></div>
+<section id="about" class="about">
+<h2>Why You Should Watch It?</h2>
+<p>Demon Slayer: Kimetsu no Yaiba is not just another anime—it’s an unforgettable journey that combines breathtaking visuals, deep emotions, and a story that stays with you long after the credits roll. If you’re wondering why you should watch it, here’s why.<br><br>
+At its heart, Demon Slayer is about family, love, and resilience. The main character, Tanjiro Kamado, loses nearly everything when his family is slaughtered by demons, and his sister Nezuko is transformed into one. Yet, instead of succumbing to despair, he sets out on a journey to protect her and find a cure. This emotional foundation gives the story real weight and makes you connect with the characters on a personal level.<br><br>
+The series also shines in its world-building. From the hauntingly beautiful landscapes of Taisho-era Japan to the intricate lore of the Demon Slayer Corps, every detail feels alive. The combat is another reason you can’t look away. Each battle is choreographed like a piece of art, with unique sword techniques, dazzling elemental effects, and raw intensity. Studio Ufotable’s animation elevates every fight into something cinematic—fluid, colorful, and jaw-droppingly immersive.<br><br>
+But beyond the action, Demon Slayer is about human emotions. Themes of hope, sacrifice, and the will to keep moving forward resonate universally. Even the demons aren’t painted as one-dimensional villains; many of their backstories are tragic, reminding us of the thin line between good and evil.<br><br>
+And of course, the bond between Tanjiro and Nezuko is a highlight. Watching Tanjiro’s kindness, determination, and unwavering love for his sister makes the series inspiring as much as it is thrilling.<br><br>
+If you’re looking for an anime that blends heart, action, beauty, and meaning, Demon Slayer is a must-watch. It’s not just entertainment—it’s an experience.</p>
+</section>
+
+<div class="sep"></div>
+<section id="gallery" class="gallery">
+<h2>Gallery</h2>
+<div class="grid">
+<img src="anime2.jpg"><img src="anime3.jpg"><img src="anime4.jpg"><img src="anime5.jpg"><img src="anime6.jpg"><img src="anime7.jpg">
+<img src="anime8.jpg"><img src="anime9.jpg"><img src="anime10.jpg"><img src="anime11.jpg"><img src="anime12.jpg"><img src="anime13.jpg">
+<img src="anime14.jpg"><img src="anime15.jpg"><img src="anime20.jpg"><img src="anime30.jpg">
+</div>
+</section>
+
+<div class="sep"></div>
+<section id="slayers">
+<h2>Meet the Slayers</h2>
+<div class="character-row"><img src="anime16.jpg"><div class="char-text"><h3>Tanjiro Kamado</h3><p>A heart full of kindness and determination, carrying the hope of his sister and family.</p></div></div>
+<div class="character-row"><img src="anime17.jpg"><div class="char-text"><h3>Nezuko Kamado</h3><p>Turned demon yet holding onto her humanity, embodying love and resilience.</p></div></div>
+<div class="character-row"><img src="anime18.jpg"><div class="char-text"><h3>Zenitsu Agatsuma</h3><p>Terrified of demons but becomes a thunderclap of power when it matters.</p></div></div>
+<div class="character-row"><img src="anime19.jpg"><div class="char-text"><h3>Inosuke Hashibira</h3><p>Raised by beasts, wild and untamed, with strength as raw as the mountains.</p></div></div>
+</section>
+
+<div class="sep"></div>
+<section id="hashira" class="hashira">
+<h2>The Hashira</h2>
+<div class="hashira-grid">
+<div class="hashira-card"><img src="anime21.jpg"><h3>Giyu Tomioka</h3><p>Water Hashira</p></div>
+<div class="hashira-card"><img src="anime22.jpg"><h3>Kyojuro Rengoku</h3><p>Flame Hashira</p></div>
+<div class="hashira-card"><img src="anime23.jpg"><h3>Tengen Uzui</h3><p>Sound Hashira</p></div>
+<div class="hashira-card"><img src="anime24.jpg"><h3>Mitsuri Kanroji</h3><p>Love Hashira</p></div>
+<div class="hashira-card"><img src="anime25.jpg"><h3>Muichiro Tokito</h3><p>Mist Hashira</p></div>
+<div class="hashira-card"><img src="anime26.jpg"><h3>Gyomei Himejima</h3><p>Stone Hashira</p></div>
+<div class="hashira-card"><img src="anime27.jpg"><h3>Obanai Iguro</h3><p>Serpent Hashira</p></div>
+<div class="hashira-card"><img src="anime28.jpg"><h3>Sanemi Shinazugawa</h3><p>Wind Hashira</p></div>
+<div class="hashira-card"><img src="anime29.jpg"><h3>Shinobu Kocho</h3><p>Insect Hashira</p></div>
+</div>
+</section>
+
+<div class="sep"></div>
+<section class="where">
+<h2>Where to Watch</h2>
+<p style="max-width:900px;margin:0 auto 20px;">You can enjoy Demon Slayer on official platforms (best quality, supports creators) and free streaming sites (easy access). Ratings below are shown as glowing orange badges.</p>
+<div class="watch-list">
+<div class="watch-item"><div class="site">Crunchyroll</div><div class="rating">9/10</div></div>
+<div class="watch-item"><div class="site">Netflix</div><div class="rating">8.7/10</div></div>
+<div class="watch-item"><div class="site">dramacool.asia</div><div class="rating">5/10</div></div>
+<div class="watch-item"><div class="site">gogoanime.by</div><div class="rating">8/10</div></div>
+<div class="watch-item"><div class="site">kisskh.co</div><div class="rating">9.5/10</div></div>
+<div class="watch-item"><div class="site">zoroto.live</div><div class="rating">9/10</div></div>
+</div>
+</section>
+
+<div id="popup"><span onclick="closePop()">X</span><img id="popup-img"></div>
+
+<script>
+function toggleMenu(){let m=document.getElementById("menu");m.style.display=(m.style.display==="block")?"none":"block";}
+let galleryPics=document.querySelectorAll(".gallery .grid img, .character-row img, .hashira-card img");
+let popup=document.getElementById("popup");
+let popImg=document.getElementById("popup-img");
+galleryPics.forEach(pic=>{pic.addEventListener("click",()=>{popImg.src=pic.src;popup.style.display="flex";})});
+function closePop(){popup.style.display="none";}
+</script>
+
+</body>
+</html>
